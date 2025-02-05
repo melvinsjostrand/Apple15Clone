@@ -12,7 +12,7 @@ const VideoCarousel = () => {
   const videoSpanRef = useRef([]);
   const videoDivRef = useRef([]);
 
-  // video and indicator
+
   const [video, setVideo] = useState({
     isEnd: false,
     startPlay: false,
@@ -62,10 +62,10 @@ const VideoCarousel = () => {
             gsap.to(videoDivRef.current[videoId], {
               width:
                 window.innerWidth < 760
-                  ? "10vw" // mobile
+                  ? "10vw"
                   : window.innerWidth < 1200
-                  ? "10vw" // tablet
-                  : "4vw", // laptop
+                  ? "10vw" 
+                  : "4vw", 
             });
 
             gsap.to(span[videoId], {
@@ -116,7 +116,6 @@ const VideoCarousel = () => {
         }
       }, [startPlay, videoId, isPlaying, loadedData]);
     
-      // vd id is the id for every video until id becomes number 3
       const handleProcess = (type, i) => {
         switch (type) {
           case "video-end":
